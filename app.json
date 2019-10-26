@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/contest/contest",
+    "pages/identify/identify",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#ff7f12",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "./img/timg.jpg",
+        "iconPath": "./img/timg.jpg",
+        "pagePath": "pages/index/index",
+        "text": "竞赛风云"
+      },
+      {
+        "selectedIconPath": "./img/timg.jpg",
+        "iconPath": "./img/timg.jpg",
+        "pagePath": "pages/index/index",
+        "text": "社团活动"
+      },
+      {
+        "selectedIconPath": "./img/timg.jpg",
+        "iconPath": "./img/timg.jpg",
+        "pagePath": "pages/index/index",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

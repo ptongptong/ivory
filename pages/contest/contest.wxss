@@ -1,0 +1,31 @@
+/* pages/contest/contest.wxss */
+.item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+}
+.img{
+  width:40%;
+  height:30vh;
+}
+.intro{
+  vertical-align:middle;
+}
+.title{
+  font-weight:700;
+}
+.abstract{
+  font-size:30rpx;
+}
+.u-wrp-bnr {
+  width: 100%;
+  height: 400rpx;
+  display: block;
+  position: relative;
+  background: #f0f0f0;
+}
+.u-img-slide {
+  width: 100%;
+  height: inherit;
+}

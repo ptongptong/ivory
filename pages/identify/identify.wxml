@@ -1,0 +1,34 @@
+<view class='title'>
+    <text>身份认证</text>
+</view>
+<view class="line l1">
+  <text class="tips">姓名</text>
+  <input class="kuang" type="text" maxlength="10" bindinput="getName"></input>
+</view>
+<view class="line l2">
+  <text wx:if="{{name==''}}" class="err">未填写</text>
+</view>
+<view class="line l1">
+  <text class="tips">角色</text>
+  <view class="role">
+      <radio-group name="radio-group" bindchange="radioChange">
+        <label><radio value="student"/>学生</label>
+        <label><radio value="teacher"/>老师</label>
+      </radio-group>
+  </view>
+</view>
+<view class="line l2">
+  <text wx:if="{{who==0}}" class="err">请选择</text>
+</view>
+<view wx:if="{{who==1}}" class="line l1">
+  <text class="tips">学号</text>
+  <input class="kuang" type="text" maxlength="12" bindinput="getCode"></input>
+</view>
+<view wx:elif="{{who==2}}" class="line l1">
+  <text class="tips">工号</text>
+  <input class="kuang" type="text" maxlength="12" bindinput="getCode"></input>
+</view>
+<view class="line l2">
+  <text wx:if="{{code=='' && who!=0}}" class="err">未填写</text>
+</view>
+<button class="btn" bindtap="submit">提交</button>

@@ -1,0 +1,34 @@
+<!--pages/contest/contest.wxml-->
+<swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+  <block wx:for="{{bnrUrl}}" wx:for-index="index">
+    <swiper-item>
+      <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 写死数据 看样式 -->
+<view class="item">
+  <image src="../../img/acm.jpg" class="img"></image>
+  <view class="intro">
+    <text class="title">国际大学生程序设计大赛</text>
+    <view class="abstract">
+      <view>报名中 1000人已报名</view>
+      <view>报名时间：2019.1.1-2019.1.2</view>
+      <view>比赛时间：2019.1.3-2019.1.4</view>
+      <view>负责单位：银河协会</view>
+    </view>
+  </view>
+</view>
+<view class="item">
+  <image src="../../img/acm.jpg" class="img"></image>
+  <view class="intro">
+    <text class="title">国际大学生程序设计大赛</text>
+    <view class="abstract">
+      <view>报名中 1000人已报名</view>
+      <view>报名时间：2019.1.1-2019.1.2</view>
+      <view>比赛时间：2019.1.3-2019.1.4</view>
+      <view>负责单位：银河协会</view>
+    </view>
+  </view>
+</view>
+
