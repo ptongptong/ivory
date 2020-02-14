@@ -1,8 +1,13 @@
 {
   "pages": [
-    "pages/contest/contest",
+    "pages/index/index",
     "pages/identify/identify",
-    "pages/index/index"
+    "pages/contest/contest",
+    "pages/search/search",
+    "pages/publish/read/read",
+    "pages/publish/write/write"
+    
+  
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -4,17 +4,18 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false,
+		"checkInvalidKey": true,
 		"coverView": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.0",
-	"appid": "wxaedfa84913c7d0fa",
+	"appid": "wx72fa2165cc2b5241",
 	"projectname": "learning",
 	"debugOptions": {
 		"hidedInDevtools": []
