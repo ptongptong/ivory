@@ -1,4 +1,7 @@
 // pages/identify/identify.js
+import {check_login } from '../../api/api.js'
+import { login } from '../../api/api.js'
+import api from '../../utils/request.js'
 Page({
 
   /**
@@ -23,36 +26,30 @@ Page({
     });
   },  
   submit: function () {
-    // if ok 按钮可用 进入
-    // this.data.ok=false;
-    // if 字段非空
-    // wx.request({
-    //   url: 'test.php', 
-    //   data: {
-    //     data1: '',
-    //     data2: '',
-    //     data3: '',
-    //   },
-    //   header: {
-    //     'content-type': 'application/json' 
-    //   },
-    //   success(res) {
-    //     console.log(res.data);
-    //     wx.navigateTo({
-    //       url: '/pages/contest/contest',
-    //     })
-    //   }，
-    //   fail(err){
+    let token = wx.getStorageSync('access_token')
+    wx.login({
+      success: res => {
+        console.log(res)
+        wx.request({
+          url: 'https://gc.cbfgo.cn/login',
+          method: 'POST',
+          data: {
+            jscode: res.code,
+          },
 
-    //   }，
-    //   complete(){
-    //     this.data.ok=true
-    //   }
-    // })
-    // wx.navigateTo({
-    //   url: '/pages/contest/contest',
-    // })
-  },
+          header: {
+            'content-type': 'application/json',
+            'access_token': token
+
+          },
+          success: function (res) {
+            console.log(res.data)
+            
+            }
+          })
+    
+
+  }})},
   radioChange: function (e) {
     if (e.detail.value == "student") {
       this.setData({
@@ -69,8 +66,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+    api.get(check_login).then(res=> {
+      console.log(res)
+      if (res.statusCode == 401) {
+        wx.login({
+          success: res => {
+            api.post(login,{
+              jscode:res.code
+            }).then(res=>{
+              console.log(res.data)
+              wx.setStorageSync('access_token', res.access_token)
+              })
+            console.log(res)
+           
+          }
+        })
+      }
+      else if (res.statusCode >= 200 && res.statusCode < 300) {
+        console.log(res.errmsg)
+      }
+      else {
+        alert(res.errmsg)
+      }
 
-  },
+    })},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

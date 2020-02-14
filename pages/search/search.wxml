@@ -1,0 +1,7 @@
+<!--pages/search/search.wxml-->
+<view >
+ <view class ="row"><text>信息查询</text></view>
+
+ <button class="write-btn" bindtap ="gotoWrite">我要发表</button>
+ <button class="read-btn" bindtap ="gotoRead">我已发表</button>
+</view>
