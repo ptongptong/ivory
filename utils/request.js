@@ -14,21 +14,22 @@ const request = (url, options) => {
       },
       //header中可以监听到token值的变化
       success(request) {
+        console.log(request);
         //监听成功后的操作
-        if (request.data.code === 10000) {
+        if (request.statusCode >= 200 && request.statusCode < 300) {
           //此处10000是项目中数据获取成功后返回的值,成功后将request.data传入resolve方法中
-          resolve(request.data)
+          resolve(request)
         } else {
           //如果没有获取成功返回值,把request.data传入到reject中
-          reject(request.data)
+          resolve(request)
         }
       },
       fail(error) {
         //返回失败也同样传入reject()方法
-        reject(error.data)
+        reject(error)
       }
     })
-  }).catch((e) => { });
+  });
 }
 //封装get方法
 const get = (url, options = {}) => {
