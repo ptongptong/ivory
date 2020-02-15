@@ -1,6 +1,6 @@
 // pages/identify/identify.js
-import {check_login } from '../../api/api.js'
-import { login } from '../../api/api.js'
+
+import { identify } from '../../api/api.js'
 import api from '../../utils/request.js'
 Page({
 
@@ -8,9 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    who:0,
+    who:-1,
     name:"",
     code:"",
+    title:"",
     ok:true,
   },
   getName: function (e) {
@@ -24,9 +25,26 @@ Page({
     this.setData({
     code: val
     });
-  },  
+  },
+
+  getTitle: function (e) {
+    var val = e.detail.value;
+    this.setData({
+      title: val
+    });
+  },
+
   submit: function () {
-   if(this.data.who == 1){
+    api.post(identify,{
+      name:this.data.name,
+      identify:this.data.who,
+      number:this.data.code,
+      title:this.data.title
+    }).then(res=>{
+      console.log(res.data)
+    })
+
+   if(this.data.who == 0){
      wx.navigateTo({
 
        url: ''
@@ -34,7 +52,7 @@ Page({
      })
 
    }
-   if(this.data.who == 2){
+   if(this.data.who == 1){
      wx.navigateTo({
 
        url: '../search/search'
@@ -52,12 +70,12 @@ Page({
     
     if (e.detail.value == "student") {
       this.setData({
-        who: 1
+        who: 0
       })
     }
     if (e.detail.value == "teacher") {
       this.setData({
-        who: 2
+        who: 1
       })
       
     }
@@ -67,27 +85,7 @@ Page({
    */
   onLoad: function (options) {
     
-    api.get(check_login).then(res=> {
-      if (res.statusCode == 401) {
-        wx.login({
-          success: res => {
-            api.post(login,{
-              jscode:res.code
-            }).then(res=>{
-              console.log(res.data.access_token)
-              wx.setStorageSync('access_token', res.data.access_token)
-                   
-          })
-        }})
-      }
-      else if (res.statusCode >= 200 && res.statusCode < 300) {
-        console.log(res.errmsg)
-      }
-      else {
-        alert(res.errmsg)
-      }
-
-    })},
+},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

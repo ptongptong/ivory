@@ -1,16 +1,17 @@
 // wx.request封装
 const app = getApp()
+const baseURL = 'https://'
 
 const request = (url, options) => {
   return new Promise((resolve, reject) => {
     wx.request({
-      url: `${app.globalData.host}${url}`,//获取域名接口地址
+      url: baseURL+url,//获取域名接口地址
       method: options.method, //配置method方法
       data: options.method === 'GET' ? options.data : JSON.stringify(options.data),
       //如果是GET,GET自动让数据成为query String,其他方法需要让options.data转化为字符串
       header: {
         'Content-Type': 'application/json; charset=UTF-8',
-        'access_token': wx.getStorageSync('access_token')
+        'Authorization': wx.getStorageSync('Authorization')
       },
       //header中可以监听到token值的变化
       success(request) {

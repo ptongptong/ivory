@@ -94,7 +94,8 @@ Page({
       content: this.data.content
 
     }).then(res=>{
-      console.log(res.access_)
+      console.log(res.data)
+      
     })
 
 

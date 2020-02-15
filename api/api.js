@@ -1,5 +1,6 @@
 const check_login = 'gc.cbfgo.cn/check_login' 
 const login = 'gc.cbfgo.cn/login' 
+const identify = 'gc.cbfgo.cn/user/identify'
 const user = 'gc.cbfgo.cn/user'
 const photo = 'gc.cbfgo.cn/attachments/upload'
 const message = 'gc.cbfgo.cn/messages'
@@ -11,6 +12,7 @@ const excel ='gc.cbfgo.cn/export_read'
 module.exports = {
   check_login,
   login,
+  identify,
   user,
   photo,
   message,

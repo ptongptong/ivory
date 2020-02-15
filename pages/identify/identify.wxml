@@ -17,18 +17,27 @@
       </radio-group>
   </view>
 </view>
+
 <view class="line l2">
-  <text wx:if="{{who==0}}" class="err">请选择</text>
+  <text wx:if="{{who==-1}}" class="err">请选择</text>
 </view>
-<view wx:if="{{who==1}}" class="line l1">
+
+<view wx:if="{{who==0}}" class="line l1">
   <text class="tips">学号</text>
   <input class="kuang" type="text" maxlength="12" bindinput="getCode"></input>
 </view>
-<view wx:elif="{{who==2}}" class="line l1">
+<view wx:elif="{{who==1}}" class="line l1">
+<view class ="line11">
   <text class="tips">工号</text>
   <input class="kuang" type="text" maxlength="12" bindinput="getCode"></input>
+
+
+   <text class="tips">头衔</text>
+   <input class="kuang" type="text" maxlength="12" bindinput="getTitle"></input>
+
+</view>
 </view>
 <view class="line l2">
-  <text wx:if="{{code=='' && who!=0}}" class="err">未填写</text>
+  <text wx:if="{{code=='' && who!=-1}}" class="err">未填写</text>
 </view>
 <button class="btn" bindtap="submit">提交</button>
