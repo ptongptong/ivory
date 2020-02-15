@@ -26,31 +26,30 @@ Page({
     });
   },  
   submit: function () {
-    let token = wx.getStorageSync('access_token')
-    wx.login({
-      success: res => {
-        console.log(res)
-        wx.request({
-          url: 'https://gc.cbfgo.cn/login',
-          method: 'POST',
-          data: {
-            jscode: res.code,
-          },
+   if(this.data.who == 1){
+     wx.navigateTo({
 
-          header: {
-            'content-type': 'application/json',
-            'access_token': token
+       url: ''
 
-          },
-          success: function (res) {
-            console.log(res.data)
-            
-            }
-          })
+     })
+
+   }
+   if(this.data.who == 2){
+     wx.navigateTo({
+
+       url: '../search/search'
+
+     })
+
+   }
+
+    
+         
     
 
-  }})},
+  },
   radioChange: function (e) {
+    
     if (e.detail.value == "student") {
       this.setData({
         who: 1
@@ -60,6 +59,7 @@ Page({
       this.setData({
         who: 2
       })
+      
     }
   },
   /**
@@ -68,20 +68,17 @@ Page({
   onLoad: function (options) {
     
     api.get(check_login).then(res=> {
-      console.log(res)
       if (res.statusCode == 401) {
         wx.login({
           success: res => {
             api.post(login,{
               jscode:res.code
             }).then(res=>{
-              console.log(res.data)
-              wx.setStorageSync('access_token', res.access_token)
-              })
-            console.log(res)
-           
-          }
-        })
+              console.log(res.data.access_token)
+              wx.setStorageSync('access_token', res.data.access_token)
+                   
+          })
+        }})
       }
       else if (res.statusCode >= 200 && res.statusCode < 300) {
         console.log(res.errmsg)

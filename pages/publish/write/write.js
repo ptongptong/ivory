@@ -1,4 +1,6 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                // pages/publish/write/write.js
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          // pages/publish/write/write.js
+import api from '../../../utils/request.js'
+import { message } from '../../../api/api.js'
 Page({
 
   /**
@@ -87,19 +89,12 @@ Page({
   },
 
   save: function(e){
-    wx.request({
-      url:'https://gc.cbfgo.cn/messages',
-      method:'POST',
-      data: {
-        title:this.title,
-        content:this.content
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        console.log(res.data)
-      }
+    api.post(message,{
+      title: this.data.title,
+      content: this.data.content
+
+    }).then(res=>{
+      console.log(res.access_)
     })
 
 
