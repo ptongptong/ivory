@@ -1,9 +1,0 @@
-/* pages/publish/read/read.wxss */
-.row{
-  display:flex;
-  margin-top:5%;
-  margin-left:38%;
-  text-align:center;
-  font-size: 20px;
-  height:10%;
-}
