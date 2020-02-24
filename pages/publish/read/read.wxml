@@ -1,4 +1,0 @@
-<!--pages/publish/read/read.wxml-->
-<view>
-<view class ="row"><text>我已发表</text></view>
-</view>
