@@ -1,0 +1,15 @@
+<!--pages/publish/write/write.wxml-->
+<view>
+<view class ="row"><text>我要发表</text></view>
+
+  <textarea class="titleText" bindinput="bindTitle" placeholder="输入通知标题"
+     auto-focus>
+  </textarea>
+
+  <textarea class="contentText" bindinput="bindContent"  placeholder="输入通知内容"
+     auto-focus>
+  </textarea>
+
+  <button class="publish-btn" bindtap ="save">发表</button>
+
+</view>

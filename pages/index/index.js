@@ -1,6 +1,8 @@
 //index.js
 //获取应用实例
 const app = getApp()
+import api from '../../utils/request.js'
+import { user } from '../../api/api.js'
 
 Page({
   data: {
@@ -9,9 +11,28 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   gotoIdentify: function () {
-    wx.navigateTo({
-      url:'/pages/identify/identify',
+    api.get(user).then(res=>{
+      console.log(res.data.identify)
+      if(res.data.identify == 1)
+      {
+        wx.navigateTo({
+          url: '/pages/teacher/search/search',
+        })
+      }
+      if(res.data.identify == 0)
+      {
+        wx.navigateTo({
+          url: '/pages/student/search/search',
+        })
+      }
+      else{
+        wx.navigateTo({
+          url: '/pages/identify/identify',
+        })
+
+      }
     })
+    
   },
   onLoad: function () {
     if (app.globalData.userInfo) {

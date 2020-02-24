@@ -1,44 +1,19 @@
 {
   "pages": [
+    "pages/teacher/publish/read/read",
     "pages/index/index",
     "pages/identify/identify",
     "pages/contest/contest",
-    "pages/search/search",
-    "pages/publish/read/read",
-    "pages/publish/write/write"
-    
-  
+    "pages/teacher/search/search",
+    "pages/teacher/publish/write/write",
+    "pages/student/search/search",
+    "pages/teacher/publish/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#22292C",
+    "navigationBarTitleText": "象牙塔",
+    "navigationBarTextStyle": "white"
   },
-  "sitemapLocation": "sitemap.json",
-  "tabBar": {
-    "color": "#a9b7b7",
-    "selectedColor": "#ff7f12",
-    "borderStyle": "black",
-    "list": [
-      {
-        "selectedIconPath": "./img/timg.jpg",
-        "iconPath": "./img/timg.jpg",
-        "pagePath": "pages/index/index",
-        "text": "竞赛风云"
-      },
-      {
-        "selectedIconPath": "./img/timg.jpg",
-        "iconPath": "./img/timg.jpg",
-        "pagePath": "pages/index/index",
-        "text": "社团活动"
-      },
-      {
-        "selectedIconPath": "./img/timg.jpg",
-        "iconPath": "./img/timg.jpg",
-        "pagePath": "pages/index/index",
-        "text": "个人中心"
-      }
-    ]
-  }
+  "sitemapLocation": "sitemap.json"
 }

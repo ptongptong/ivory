@@ -1,43 +1,69 @@
-<view class='title'>
-    <text>身份认证</text>
-</view>
-<view class="line l1">
-  <text class="tips">姓名</text>
-  <input class="kuang" type="text" maxlength="10" bindinput="getName"></input>
-</view>
-<view class="line l2">
-  <text wx:if="{{name==''}}" class="err">未填写</text>
-</view>
-<view class="line l1">
-  <text class="tips">角色</text>
-  <view class="role">
-      <radio-group name="radio-group" bindchange="radioChange">
-        <label><radio value="student"/>学生</label>
-        <label><radio value="teacher"/>老师</label>
-      </radio-group>
+<view>
+
+<view class = "choice" >
+  <view class = "choice_body" wx:for="{{role}}" wx:key="{{role}}" data-id = "{{item.rolename}}"bindtap = 'click'>
+  <view class = "choice_line">
+   <view class = "choice_icon">
+    <view class = "choice_item">{{item.rolename}}</view>
+    <icon  class = "click_icon" type = "success_no_circle" size = "20" color = 'rgb(69,154,233)' wx:if = "{{selectRole==item.rolename}}"/>
+   </view>
+    <view class="line"></view>
+
+  </view>
   </view>
 </view>
 
-<view class="line l2">
-  <text wx:if="{{who==-1}}" class="err">请选择</text>
-</view>
+<view class = "information">
+  <view class = "information_line"> 
+  <view class = "information_item"> 身份
+  <text class = "item_style">{{selectRole}}</text>
+  </view>
+  <view class="line"></view>
+  </view>
 
-<view wx:if="{{who==0}}" class="line l1">
-  <text class="tips">学号</text>
-  <input class="kuang" type="text" maxlength="12" bindinput="getCode"></input>
-</view>
-<view wx:elif="{{who==1}}" class="line l1">
-<view class ="line11">
-  <text class="tips">工号</text>
-  <input class="kuang" type="text" maxlength="12" bindinput="getCode"></input>
+  <view class = "information_line">
+   <view class = "information_item"> 姓名
+   <input class = "item_style" placeholder='请输入真实姓名' bindinput='getName'></input>
+   </view>
+   <view class="line"></view>
+   </view>
 
+   <view class = "information_line">
+   <view class = "information_item" wx:if = "{{selectRole == '学生'}}"> 学号
+   <input class = "item_style" placeholder='请输入完整学号' bindinput='getNumber'></input>
+   </view>
+   <view class="line"></view>
+   </view>
 
-   <text class="tips">头衔</text>
-   <input class="kuang" type="text" maxlength="12" bindinput="getTitle"></input>
+   <view class = "information_line">
+   <view class = "information_item" wx:if = "{{selectRole == '教师'}}"> 工号
+   <input class = "item_style" placeholder='请输入完整工号' bindinput='getNumber'></input>
+   </view>
+   <view class="line"></view>
+   </view>
 
+   <view class = "information_line">
+   <view class = "information_item"> 学院
+      <picker class = "item_style" bindchange="bind1PickerChange" value="{{index_}}" range="{{schools}}" range-key="{{'name'}}">
+        <view class="picker">
+        当前选择   {{schools[index_].name}}
+        </view>
+      </picker>
+   </view>
+   <view class="line"></view>
+   </view>
+
+   <view class = "information_line">
+   <view class = "information_item" wx:if = "{{selectRole == '教师'}}"> 头衔
+      <picker class = "item_style" bindchange="bind2PickerChange" value="{{index}}" range="{{titles}}">
+        <view class="picker">
+        当前选择   {{titles[index]}}
+        </view>
+      </picker>
+   </view>
+   <view class="line"></view>
+   </view>
+   
 </view>
+ <button class = "next" bindtap = "submit">下一步</button>
 </view>
-<view class="line l2">
-  <text wx:if="{{code=='' && who!=-1}}" class="err">未填写</text>
-</view>
-<button class="btn" bindtap="submit">提交</button>

@@ -1,0 +1,15 @@
+<!--pages/student/search/search.wxml-->
+<view>
+<scroll-view class="container">
+<view class = "date">
+
+</view>
+
+
+
+
+
+</scroll-view>
+
+
+</view>

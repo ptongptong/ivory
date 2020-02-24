@@ -1,0 +1,113 @@
+/* pages/teacher/publish/detail/detail.wxss */
+
+.title_read{
+  display:flex;
+  flex-direction:row;
+}
+
+.detail_title{
+margin-top:20rpx;
+margin-left:20rpx;
+font-family: MicrosoftYaHei;
+font-size:50rpx;
+color:black;
+}
+
+.detail_read{
+margin-top:40rpx;
+margin-left:500rpx;
+text-align: center;
+font-family: MicrosoftYaHei;
+font-size:30rpx;
+color:rgb(136,136,136);
+
+}
+
+.publisher_date{
+  display:flex;
+  flex-direction:row;
+}
+
+.detail_publisher{
+  margin-top:10rpx;
+margin-left:20rpx;
+text-align: center;
+font-family: MicrosoftYaHei;
+font-size:30rpx;
+color:rgb(69,154,233);}
+
+.detail_date{
+margin-top:10rpx;
+margin-left:300rpx;
+text-align: center;
+font-family: MicrosoftYaHei;
+font-size:30rpx;
+color:rgb(136,136,136);
+
+}
+
+.detail_begin{
+  margin-left:40rpx;
+  font-family: MicrosoftYaHei;
+  font-size:36rpx;
+  margin-top:40rpx;
+  color:rgb(0,0,0);
+
+}
+
+.detail_content{
+  text-indent: 50rpx;
+  margin-left:40rpx;
+  margin-top:10rpx;
+ font-family: MicrosoftYaHei;
+  font-size:31rpx;
+  text-align:left;
+  color:rgb(0,0,0);
+}
+
+.detail_end{
+   margin-left:500rpx;
+  font-family: MicrosoftYaHei;
+  font-size:36rpx;
+  margin-top:10rpx;
+  color:rgb(0,0,0);
+
+
+}
+
+.btn{
+  display:flex;
+  flex-direction: row;
+  overflow:hidden;
+  margin-top:40rpx;
+}
+
+.export{
+ 
+  
+  height:70rpx;
+  width:120rpx;
+  border-radius: 6rpx;
+  background-color:rgb(69,154,233);
+  border-color: rgba(0,0,0,0.08);
+  font-family: MicrosoftYaHei;
+  font-size:28rpx;
+  color:#fff;
+  margin-left:450rpx;
+ 
+
+}
+
+.delete{
+  height:70rpx;
+  width:120rpx;
+  border-radius: 6rpx;
+
+  border-color: rgb(69,154,233);
+  font-family: MicrosoftYaHei;
+  font-size:28rpx;
+  color:rgb(69,154,233);
+  margin-left:30rpx;
+  text-align: center;
+
+}

@@ -1,6 +1,7 @@
 // pages/identify/identify.js
 
 import { identify } from '../../api/api.js'
+import { school } from '../../api/api.js'
 import api from '../../utils/request.js'
 Page({
 
@@ -8,78 +9,128 @@ Page({
    * 页面的初始数据
    */
   data: {
-    who:-1,
+    role:[
+      {"rolename":"学生"},
+      {"rolename":"教师"},
+    ],
+    schools:[],
+    titles:["辅导员","教务员"],
+    index:0,
+    index_:0,
+    selectRole:"",
+    who:"",
     name:"",
-    code:"",
+    number:"",
     title:"",
+    id:0,
     ok:true,
+   
+    
   },
+
+  bind1PickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index_: e.detail.value,
+      id:parseInt(this.data.index_)+1,
+     
+    })
+    console.log(parseInt(this.data.index_)+1)
+  },
+
+  bind2PickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value,
+      
+      title: this.data.titles[this.data.index]
+    })
+  
+  },
+
+
+  click: function (e) {
+    console.log(e)
+    console.log(e.currentTarget.dataset.id)
+    this.setData({
+      selectRole: e.currentTarget.dataset.id
+      
+    })
+    var selectRole = this.data.selectRole;
+    if (selectRole == '学生') {
+      this.setData({
+        who:0
+
+      })
+    }
+    if (selectRole == '教师') {
+      this.setData({
+        who: 1
+
+      })
+    }
+
+  },
+
+  
+  
   getName: function (e) {
     var val = e.detail.value;
     this.setData({
       name: val
     });
   },  
-  getCode: function (e) {
+  getNumber: function (e) {
     var val = e.detail.value;
     this.setData({
-    code: val
+     number: val
     });
   },
 
-  getTitle: function (e) {
-    var val = e.detail.value;
-    this.setData({
-      title: val
-    });
-  },
+
 
   submit: function () {
+    console.log(this.data.name)
+    console.log(this.data.who)
+    console.log(this.data.number)
+    console.log(this.data.title)
+    console.log(this.data.id)
     api.post(identify,{
       name:this.data.name,
       identify:this.data.who,
-      number:this.data.code,
-      title:this.data.title
+      number:this.data.number,
+      title:this.data.title,
+      school_id:this.data.id,
     }).then(res=>{
       console.log(res.data)
+      if (this.data.selectRole == '学生') {
+        wx.navigateTo({
+
+          url: '../student/search/search'
+
+        })
+
+      }
+      if (this.data.selectRole == '教师') {
+        wx.navigateTo({
+
+          url: '../teacher/search/search'
+
+        })
+
+      }
+
     })
 
-   if(this.data.who == 0){
-     wx.navigateTo({
-
-       url: ''
-
-     })
-
-   }
-   if(this.data.who == 1){
-     wx.navigateTo({
-
-       url: '../search/search'
-
-     })
-
-   }
+ 
 
     
          
     
 
   },
-  radioChange: function (e) {
-    
-    if (e.detail.value == "student") {
-      this.setData({
-        who: 0
-      })
-    }
-    if (e.detail.value == "teacher") {
-      this.setData({
-        who: 1
-      })
-      
-    }
-  },
+  
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -98,6 +149,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+   api.get(school).then(res=>
+   {
+     this.setData({
+       schools: res.data.items
+     });
+    
+     console.log(this.data.schools)
+   }
+   )
 
   },
 

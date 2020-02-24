@@ -8,6 +8,8 @@ const information = 'gc.cbfgo.cn/my_messages?page=1'
 const list = 'gc.cbfgo.cn/messages'
 const read = 'gc.cbfgo.cn/messages/1/read'
 const excel ='gc.cbfgo.cn/export_read'
+const school = 'gc.cbfgo.cn/schools'
+const getmessage ='gc.cbfgo.cn/my_messages?page=1'
 
 module.exports = {
   check_login,
@@ -19,5 +21,7 @@ module.exports = {
   information,
   list,
   read,
-  excel
+  excel,
+  school,
+  getmessage
 }
