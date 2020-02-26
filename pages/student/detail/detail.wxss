@@ -1,10 +1,4 @@
-/* pages/teacher/publish/detail/detail.wxss */
-
-.title_read{
-  display:flex;
-  flex-direction:row;
-}
-
+/* pages/student/detail/detail.wxss */
 .detail_title{
 margin-top:30rpx;
 margin-left:30rpx;
@@ -80,38 +74,26 @@ color:rgb(136,136,136);
 }
 
 .btn{
-  display:flex;
-  flex-direction: row;
+  
   overflow:hidden;
   margin-top:40rpx;
 }
 
-.export{
- 
+
+
+.read{
+ width: 690rpx;
+  height:94rpx;
   
-  height:70rpx;
-  width:120rpx;
-  border-radius: 6rpx;
-  background-color:rgb(69,154,233);
-  border-color: rgba(0,0,0,0.08);
-  font-family: MicrosoftYaHei;
-  font-size:28rpx;
-  color:#fff;
-  margin-left:450rpx;
- 
-
-}
-
-.delete{
-  height:70rpx;
-  width:120rpx;
-  border-radius: 6rpx;
-
-  border-color: rgb(69,154,233);
-  font-family: MicrosoftYaHei;
-  font-size:28rpx;
-  color:rgb(69,154,233);
-  margin-left:30rpx;
+  background-color: rgb(69,154,233);
+  color: rgb(255,255,255);
   text-align: center;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family:MicrosoftYaHei;
+  font-size: 36rpx;
 
 }

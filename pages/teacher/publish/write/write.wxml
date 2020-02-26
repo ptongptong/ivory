@@ -2,11 +2,11 @@
 <view>
 <view class ="row"><text>我要发表</text></view>
 
-  <textarea class="titleText" bindinput="bindTitle" placeholder="输入通知标题"
+  <textarea class="titleText" bindinput="bindTitle" placeholder="请输入通知标题"
      auto-focus>
   </textarea>
 
-  <textarea class="contentText" bindinput="bindContent"  placeholder="输入通知内容"
+  <textarea class="contentText" bindinput="bindContent"  placeholder="请输入通知内容"
      auto-focus>
   </textarea>
 

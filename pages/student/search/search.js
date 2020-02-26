@@ -12,6 +12,12 @@ Page({
   },
 
 
+  toDetail: (e) => {
+    let index = e.currentTarget.dataset.index;
+    wx.navigateTo({
+      url: '../detail/detail?index=' + index,
+    })
+  },
 
 
   /**
@@ -33,8 +39,11 @@ Page({
    */
   onShow: function () {
     api.get(list).then(res=>{
-      items:res.data.items
       console.log(res.data.items)
+      this.setData({
+        items: res.data.items
+      })
+      
     })
 
 

@@ -1,9 +1,7 @@
-// pages/identify/identify.js
-
-import { identify } from '../../api/api.js'
-import { school } from '../../api/api.js'
 import api from '../../utils/request.js'
-Page({
+import { school } from '../../api/api.js'
+import { identify} from '../../api/api.js'
+ Page({
 
   /**
    * 页面的初始数据
@@ -15,9 +13,10 @@ Page({
     ],
     schools:[],
     titles:["辅导员","教务员"],
-    index:0,
-    index_:0,
-    selectRole:"",
+    index:-1,
+    index_:-1,
+    
+      selectRole:"",
     who:"",
     name:"",
     number:"",
@@ -30,21 +29,30 @@ Page({
 
   bind1PickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
+    console.log(parseInt(e.detail.value) + 1)
     this.setData({
-      index_: e.detail.value,
-      id:parseInt(this.data.index_)+1,
+      index_: parseInt(e.detail.value),
+      id: parseInt(e.detail.value) + 1,
+      
      
     })
-    console.log(parseInt(this.data.index_)+1)
+  
   },
 
   bind2PickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index: e.detail.value,
+      index: e.detail.value ,
       
-      title: this.data.titles[this.data.index]
+      
     })
+    if ( this.data.titles[this.data.index])
+    {
+      this.setData({
+        title: this.data.titles[this.data.index]
+      })
+    }
+    
   
   },
 

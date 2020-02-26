@@ -1,6 +1,7 @@
 //app.js
 import { check_login } from 'api/api.js'
 import { login } from 'api/api.js'
+import {debug} from 'api/api.js'
 import api from 'utils/request.js'
 App({
  
@@ -15,7 +16,8 @@ App({
         wx.login({
           success: res => {
             api.post(login, {
-              jscode: res.code
+               jscode: res.code,
+              
             }).then(res => {
               console.log(res.data)
               wx.setStorageSync('Authorization', res.data.Authorization)

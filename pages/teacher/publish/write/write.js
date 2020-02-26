@@ -94,6 +94,11 @@ Page({
       content: this.data.content
 
     }).then(res=>{
+      wx.showToast({
+        title: '成功发布！', // 标题
+        icon: 'success',  // 图标类型，默认success
+        duration: 1500  // 提示窗停留时间，默认1500ms
+      })
     
     })
 

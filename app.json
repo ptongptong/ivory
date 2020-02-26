@@ -1,13 +1,20 @@
 {
   "pages": [
-    "pages/teacher/publish/read/read",
+    
     "pages/index/index",
-    "pages/identify/identify",
-    "pages/contest/contest",
-    "pages/teacher/search/search",
     "pages/teacher/publish/write/write",
+    "pages/teacher/search/search",
+    
+    
+    "pages/teacher/publish/read/read",
+    "pages/identify/identify",
+    
+    "pages/teacher/publish/detail/detail",
+    "pages/contest/contest",
+    
     "pages/student/search/search",
-    "pages/teacher/publish/detail/detail"
+    
+    "pages/student/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

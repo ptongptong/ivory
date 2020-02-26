@@ -3,6 +3,7 @@
 import api from '../../../../utils/request.js'
 import { getmessage } from '../../../../api/api.js'
 import { excel } from '../../../../api/api.js'
+
 Page({
 
   /**
@@ -42,20 +43,61 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
+  toDelete:function(e){
+    wx.request({
+      url: 'http://gc.cbfgo.cn/messages/'+this.data.detailData.id, //仅为示例，并非真实的接口地址
+      data: {
+        msg_id:this.data.detailData.id
+      },
+      header: {
+        'content-type': 'application/json',
+        'Authorization': wx.getStorageSync('Authorization') // 默认值
+      },
+      method: 'DELETE',
+      success(res) {
+        console.log(res.data)
+        wx.showToast({
+          title: '已删除！', // 标题
+          icon: 'success',  // 图标类型，默认success
+          duration: 1500  // 提示窗停留时间，默认1500ms
+        })
+      }
+    })
+  },
 
 
   toExport:function (e) {
+ 
+    wx.downloadFile({
+      
+      url: 'https://gc.cbfgo.cn/export_read?id=' + this.data.detailData.id,
+      data: {
+       id:this.data.detailData.id
+      },
+      header: {
+        'content-type': 'application/json', 
+         'Authorization': wx.getStorageSync('Authorization')
+        // 默认值
+      },
 
-    console.log(this.data.detailData.id)
-    api.get(excel,
-      {
-        params:{
-        id: this.data.detailData.id}
-      }).then(res => {
+      success(res) {
         
+        if (res.statusCode === 200) {
+         var fPath = res.tempFilePath
+         console.log(fPath)
+          wx.openDocument({
+            filePath: fPath,
+            fileType: 'xls',
+            success: function (res) {
+              console.log('打开文档成功')
+          
+        }
       })
 
-  },
+
+    }
+   
+  }})},
   onReady: function () {
 
   },

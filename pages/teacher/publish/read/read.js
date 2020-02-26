@@ -15,7 +15,7 @@ Page({
   toDetail:(e) =>{
     let index = e.currentTarget.dataset.index;
     wx.navigateTo({
-      url: '/pages/teacher/publish/detail/detail?index='+index,
+      url: '../detail/detail?index='+index,
     })
   },
 

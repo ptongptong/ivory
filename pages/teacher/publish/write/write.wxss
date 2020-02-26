@@ -1,44 +1,60 @@
 /* pages/publish/write/write.wxss */
 .row{
   display:flex;
-  margin-top:5%;
-  margin-left:40%;
-  text-align:center;
-  font-size: 20px;
-  height:10%;
+  margin-top:20rpx;
+  text-align: center;
+  margin-left:35%;
+  
+  height:110rpx;
+  font-family: MicrosoftYaHei;
+  font-size: 50rpx;
+  
 }
 
 .titleText{
   
-  width:80%;
- 
-  margin-left:10%;
-  margin-top:10%;
-  height:50px;
+  margin-left:10px;
+  padding-left:10px;
+  width:690rpx;
+ font-family: MicrosoftYaHei;
+  font-size: 34rpx;
+  text-align:left;
+  height:90rpx;
   border-radius: 5px;
 
-  background-color:lightgray;
+  background-color:white;
+  color:rgb(169,169,169);
+
   
 }
 
 .contentText{
   
-  width:80%;
- 
-  margin-left:10%;
-  margin-top:5%;
-  height:200px;
+  margin-top:18px;
+  margin-left:10px;
+  padding-left:10px;
+ width:690rpx;
+ font-family: MicrosoftYaHei;
+  font-size: 34rpx;
+  text-align:left;
+  height:700rpx;
   border-radius: 5px;
 
-  background-color:lightgray;
-  
+  background-color:white;
+  color:rgb(169,169,169);
+
 }
 .publish-btn{
-background-color: lightcoral;
-color:#fff;
-border-radius: 15px;
-width:50%;
-margin-top:10%;
+  margin-top:36rpx;
+  width:690rpx;
+ font-family: MicrosoftYaHei;
+  font-size: 42rpx;
+  text-align:center;
+  height:100rpx;
+  border-radius: 5px;
+
+  background-color:rgb(69,154,233);
+  color:white;
 
 
 }

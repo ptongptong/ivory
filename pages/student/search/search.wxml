@@ -1,15 +1,24 @@
 <!--pages/student/search/search.wxml-->
+<wxs src = '../../../wxs/date.wxs' module = "tools_"/>
+<wxs src = '../../../wxs/min.wxs' module = "tools"/>
 <view>
-<scroll-view class="container">
-<view class = "date">
-
+<view class= "list_body" wx:for = "{{items}}" wx:key = "{{items}}" data-id = "{{item.id}}">
+<view bindtap='toDetail' data-index = "{{index}}">
+<view class = "list_date">{{tools_.date(item.time)}}</view>
+<view class = "line"></view>
+<view class = "list_main">
+<view class = "list_title">{{item.title}}</view>
+<view class = "list_content">{{item.content}}</view>
+<view class = "list_else">
+<view class = "list_publisher">
+ {{item.user.title}}{{item.user.name}}
+ </view>
+ <view class = "list_min">
+ 时间 | {{tools.min(item.time)}}
+ </view>
+ 
+ </view>
+ </view>
 </view>
-
-
-
-
-
-</scroll-view>
-
-
+</view>
 </view>

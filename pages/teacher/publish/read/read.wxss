@@ -16,7 +16,10 @@
   color:rgb(169,169,169);
 }
 .list_main{
-  height:254rpx
+  height:254rpx;
+  margin-right:30rpx;
+  
+ 
 }
 
 .list_title{
@@ -26,6 +29,13 @@
   color:rgb(0,0,0);
   font-size: 40rpx;
   margin-left:20rpx;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+
 
 }
 
@@ -34,6 +44,13 @@
   font-size: 32rpx;
   font-family: MicrosoftYaHei;
   color:rgb(169,169,169);
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+   overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+
 }
 .list_else{
   display:flex;

@@ -1,0 +1,25 @@
+<!--pages/student/detail/detail.wxml-->
+<wxs src = '../../../wxs/date.wxs' module = "tool"/>
+
+<view>
+
+<view class = "detail_title">{{detailData.title}}</view>
+
+
+
+<view class = "publisher_date">
+<view class ="detail_publisher">{{detailData.user.title}}{{detailData.user.name}}</view>
+<view class = "detail_date" wx:if="{{ detailData != '' }}">{{tool.date(detailData.time)}}</view>
+</view>
+
+<view class = "detail_begin">同学们:</view>
+<view class = "detail_content">{{detailData.content}}</view>
+<view class = "detail_end">{{detailData.user.school.name}}</view>
+
+<view class = "btn">
+
+<button class = "read" bindtap = "toRead">已阅</button>
+
+</view>
+</view>
+
