@@ -12,7 +12,7 @@ const school = 'gc.cbfgo.cn/schools'
 const getmessage ='gc.cbfgo.cn/my_messages?page=1'
 const debug ='gc.cbfgo.cn/debug/login'
 
-
+const bind = 'gc.cbfgo.cn/user/bind_students'
 module.exports = {
   check_login,
   login,
@@ -22,7 +22,7 @@ module.exports = {
   message,
   information,
   list,
-
+  bind,
   excel,
   school,
   getmessage,
