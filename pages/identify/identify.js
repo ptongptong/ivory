@@ -122,7 +122,7 @@ import { identify} from '../../api/api.js'
       if (this.data.selectRole == '教师') {
         wx.navigateTo({
 
-          url: '../teacher/search/search'
+          url: '../teacher/bindS/bindS'
 
         })
 
@@ -137,7 +137,7 @@ import { identify} from '../../api/api.js'
     
 
   },
-  
+ 
   
   /**
    * 生命周期函数--监听页面加载
