@@ -1,13 +1,31 @@
 {
   "pages": [
-    
     "pages/index/index",
-    "pages/teacher/publish/write/write",
     "pages/teacher/search/search",
-    
-    
     "pages/teacher/publish/read/read",
+   
+    "pages/teacher/bindS/bindS",
+    
     "pages/identify/identify",
+    
+   
+    
+    
+   
+    
+   
+   
+   
+  
+   
+   
+    
+    "pages/teacher/publish/write/write",
+   
+    
+    
+  
+    
     
     "pages/teacher/publish/detail/detail",
     "pages/contest/contest",

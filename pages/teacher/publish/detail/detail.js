@@ -45,7 +45,7 @@ Page({
    */
   toDelete:function(e){
     wx.request({
-      url: 'http://gc.cbfgo.cn/messages/'+this.data.detailData.id, //仅为示例，并非真实的接口地址
+      url: 'https://guweimumian.cn/api/messages/'+this.data.detailData.id, //仅为示例，并非真实的接口地址
       data: {
         msg_id:this.data.detailData.id
       },
@@ -70,7 +70,7 @@ Page({
  
     wx.downloadFile({
       
-      url: 'https://gc.cbfgo.cn/export_read?id=' + this.data.detailData.id,
+      url: 'https://guweimumian.cn/api/export_read?id=' + this.data.detailData.id,
       data: {
        id:this.data.detailData.id
       },

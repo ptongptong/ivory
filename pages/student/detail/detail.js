@@ -17,7 +17,7 @@ Page({
   toRead:function(e) {
    
     wx.request({
-      url: 'http://gc.cbfgo.cn/messages/'+this.data.detailData.id+'/read', //仅为示例，并非真实的接口地址
+      url: 'https://guweimumian.cn/api/messages/'+this.data.detailData.id+'/read', //仅为示例，并非真实的接口地址
       data: {
         id: this.data.detailData.id
       },

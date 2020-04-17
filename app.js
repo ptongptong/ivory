@@ -15,6 +15,7 @@ App({
       if (res.statusCode == 401) {
         wx.login({
           success: res => {
+            
             api.post(login, {
                jscode: res.code,
               

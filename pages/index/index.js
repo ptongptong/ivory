@@ -12,11 +12,11 @@ Page({
   },
   gotoIdentify: function () {
     api.get(user).then(res=>{
-      console.log(res.data.identify)
+      console.log(res.data)
       if(res.data.identify == 1)
       {
         wx.navigateTo({
-          url: '/pages/teacher/search/search',
+          url: '/pages/teacher/bindS/bindS',
         })
       }
       if(res.data.identify == 0)
@@ -25,7 +25,7 @@ Page({
           url: '/pages/student/search/search',
         })
       }
-      else{
+      if(res.data.identify == null){
         wx.navigateTo({
           url: '/pages/identify/identify',
         })

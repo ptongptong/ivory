@@ -23,7 +23,7 @@ import { identify} from '../../api/api.js'
     title:"",
     id:0,
     ok:true,
-   
+    key:'ABCDEF',
     
   },
 
@@ -98,45 +98,54 @@ import { identify} from '../../api/api.js'
 
 
   submit: function () {
-    console.log(this.data.name)
-    console.log(this.data.who)
-    console.log(this.data.number)
-    console.log(this.data.title)
-    console.log(this.data.id)
+   
+    console.log(this.data.key)
+    if(this.data.who == 1){
     api.post(identify,{
       name:this.data.name,
       identify:this.data.who,
       number:this.data.number,
       title:this.data.title,
       school_id:this.data.id,
+      key:this.data.key
     }).then(res=>{
       console.log(res.data)
-      if (this.data.selectRole == '学生') {
-        wx.navigateTo({
-
-          url: '../student/search/search'
-
-        })
-
-      }
-      if (this.data.selectRole == '教师') {
+     
+   
         wx.navigateTo({
 
           url: '../teacher/bindS/bindS'
 
         })
 
-      }
+      
 
     })
+  }
+  if(this.data.who == 0){
+    api.post(identify,{
+      name:this.data.name,
+      identify:this.data.who,
+      number:this.data.number,
+      title:this.data.title,
+      school_id:this.data.id,
+      
+    }).then(res=>{
+      console.log(res.data)
+    
+      wx.navigateTo({
 
- 
+        url: '../student/search/search'
+
+      })
 
     
-         
-    
+  })}
 
-  },
+},
+
+
+
  
   
   /**
@@ -159,11 +168,12 @@ import { identify} from '../../api/api.js'
   onShow: function () {
    api.get(school).then(res=>
    {
+     console.log(res.data)
      this.setData({
        schools: res.data.items
      });
     
-     console.log(this.data.schools)
+     
    }
    )
 

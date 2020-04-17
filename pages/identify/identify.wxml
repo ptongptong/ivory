@@ -1,7 +1,7 @@
 <view>
 
 <view class = "choice" >
-  <view class = "choice_body" wx:for="{{role}}" wx:key="{{role}}" data-id = "{{item.rolename}}"bindtap = 'click'>
+  <view class = "choice_body" wx:for="{{role}}" wx:key="role" data-id = "{{item.rolename}}"bindtap = 'click'>
   <view class = "choice_line">
    <view class = "choice_icon">
     <view class = "choice_item">{{item.rolename}}</view>

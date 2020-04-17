@@ -1,11 +1,12 @@
 <!--pages/teacher/bindS/bindS.wxml-->
 <view>
-<button bindtap= "show">添加学生</button>
-<input wx:if="{{showInput}}" placeholder = "请输入学生学号" focus = "auto " bindconfirm="add" value='{{inputValue}}'></input>
 
-
-
+<input  placeholder = "请输入学生学号(需要回车)" focus = "auto " value='{{inputValue}}' bindconfirm="add"></input>
 <button bindtap = "submit" >确认绑定</button>
+<button bindtap= "delete"  >清空</button>
+
+
+
 <button bindtap = "click" >下一步</button>
 </view>
 

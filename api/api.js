@@ -1,18 +1,18 @@
-const check_login = 'gc.cbfgo.cn/check_login' 
-const login = 'gc.cbfgo.cn/login' 
-const identify = 'gc.cbfgo.cn/user/identify'
-const user = 'gc.cbfgo.cn/user'
-const photo = 'gc.cbfgo.cn/attachments/upload'
-const message = 'gc.cbfgo.cn/messages'
-const information = 'gc.cbfgo.cn/my_messages?page=1'
-const list = 'gc.cbfgo.cn/messages'
+const check_login = 'guweimumian.cn/api/check_login' 
+const login = 'guweimumian.cn/api/login' 
+const identify = 'guweimumian.cn/api/user/identify'
+const user = 'guweimumian.cn/api/user'
+const photo = 'guweimumian.cn/api/upload'
+const message = 'guweimumian.cn/api/messages'
+const information = 'guweimumian.cn/api/my_messages?page=1'
+const list = 'guweimumian.cn/api/messages'
+const key = 'guweimumian.cn/user/new_captcha?key=simplekey'
+const excel ='guweimumian.cn/api/export_read'
+const school = 'guweimumian.cn/api/schools'
+const getmessage ='guweimumian.cn/api/my_messages?page=1'
+const debug ='guweimumian.cn/api/debug/login'
 
-const excel ='gc.cbfgo.cn/export_read'
-const school = 'gc.cbfgo.cn/schools'
-const getmessage ='gc.cbfgo.cn/my_messages?page=1'
-const debug ='gc.cbfgo.cn/debug/login'
-
-const bind = 'gc.cbfgo.cn/user/bind_students'
+const bind = 'guweimumian.cn/api/user/bind_students'
 module.exports = {
   check_login,
   login,
@@ -27,5 +27,5 @@ module.exports = {
   school,
   getmessage,
   debug,
-  
+  key,
 }
