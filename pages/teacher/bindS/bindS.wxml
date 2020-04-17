@@ -1,7 +1,7 @@
 <!--pages/teacher/bindS/bindS.wxml-->
 <view>
 
-<input  placeholder = "请输入学生学号(需要回车)" focus = "auto " value='{{inputValue}}' bindconfirm="add"></input>
+<input  placeholder = "请输入学生学号" focus = "auto " value='{{inputValue}}'bindinput="getNum"></input>
 <button bindtap = "submit" >确认绑定</button>
 <button bindtap= "delete"  >清空</button>
 

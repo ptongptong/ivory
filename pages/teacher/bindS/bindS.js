@@ -70,6 +70,7 @@ Page({
   },
 
   submit:function(){
+    
     console.log(this.data.num)
     api.post(bind,{
       numbers:this.data.num
@@ -98,9 +99,15 @@ Page({
     });
   },
 
-  add:function(e){
+  getNum:function(e){
     var val = e.detail.value;
-    this.data.num.push(val);
-    console.log(this.data.num)
+    this.setData({
+      num:val
+    })
+
   }
+
+  
+
+ 
 })
